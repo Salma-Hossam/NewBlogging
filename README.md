@@ -7,6 +7,7 @@ A website where users can navigate between articles, and write their own article
 *You have two options
 
 1- run the project with no experimental data, and begin to use it from zero
+
 2- (recommended) restore the database using the bak file “Yakeen-Blog.bak”  on https://drive.google.com/open?id=11hGtvxS6So7-WnKEdnkm5-JxONbm0ajB,
 in order to get experimental/primary data.
 
