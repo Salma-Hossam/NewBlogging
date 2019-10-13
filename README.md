@@ -19,16 +19,18 @@ in order to get experimental/primary data.
 
 *Privillages
 
-1- Unauthenticated user:
-*In home, can find all articles
-*can navigate between articles, and choose an article to read it and read the comment
-*choose a category to display articles belonging to it
-*use search: search works with article headers, article texts and author names.
+- Unauthenticated user:
+1*In home, can find all articles
+2*can navigate between articles, and choose an article to read it and read the comment
+3*choose a category to display articles belonging to it
+4*use search: search works with article headers, article texts and author names.
 
-2- authenticated normal user:
-*can comment on any article he wants
+- authenticated normal user:
+1*all unauthenticated user privilages
+2*can comment on any article he wants
 
-3- authenticated admin user:
-*can write a new article, by pressing "write an article" button in navbar
-*can see all his own articles by pressing "your articles" button in navbar
+- authenticated admin user:
+1*all unauthenticated and authenticated normal user
+2*can write a new article, by pressing "write an article" button in navbar
+3*can see all his own articles by pressing "your articles" button in navbar
 
