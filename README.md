@@ -5,15 +5,19 @@ A website where users can navigate between articles, and write their own article
  in order to run seeding method for the essential data, which are roles and categories, to be restored in database.
  
 *You have two options
+
 1- run the project with no experimental data, and begin to use it from zero
 2- (recommended) restore the database using the bak file “Yakeen-Blog.bak”  on https://drive.google.com/open?id=11hGtvxS6So7-WnKEdnkm5-JxONbm0ajB,
 in order to get experimental/primary data.
 
 *After running the project
+
   when registering, set the role of the user from the role drop down list in the form.
+  
   if you restored the bak file and needed to login using existing users, then all their passwords are P@ssw0rd
 
 *Privillages
+
 1- Unauthenticated user:
 *In home, can find all articles
 *can navigate between articles, and choose an article to read it and read the comment
