@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Comment>
+
+<h2 class="comments-title">
+    <span>@Model.Count() Comments</span>
+</h2>
+
+<ol class="comment-list">
+    @foreach (var item in @Model)
+    {
+        <li class="comment">
+            <div class="comment-body">
+                <div class="comment-meta">
+                    <div class="comment-metadata">
+                        @Html.DisplayFor(m => item.User.UserName, new {@class = "author"})
+                        @Html.DisplayFor(m => item.Time, new {@class = "date"})
+                    </div><!-- .comment-metadata -->
+                </div><!-- .comment-meta -->
+
+                <div class="comment-details">
+
+                    <div class="comment-content">
+                        @Html.DisplayFor(m => item.Text)
+                    </div><!-- .comment-content -->
+                </div> <!-- /.comment-details -->
+            </div><!-- .comment-body -->
+        </li><!-- #comment -->
+    }
+
+
+</ol><!-- .comment-list -->

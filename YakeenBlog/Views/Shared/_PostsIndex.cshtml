@@ -1,0 +1,66 @@
+﻿@model IEnumerable<PostDetailVM>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="row">
+                <div class="col-md-12" id="blog-content">
+                    <!-- Content Area -->
+                    <div id="primary" class="content-area">
+                        <main id="main" class="site-main">
+
+                            @foreach (var item in Model)
+                            {
+                                <article class="post format-gallery hentry">
+
+                                    <header class="entry-header">
+
+                                        <h2 class="entry-title"><a href="#" rel="bookmark">@item.Header</a></h2>
+                                        <div class="entry-meta">
+                                            <span class="cat-links">
+                                                <a rel="category tag" href="#">@item.Category</a>
+                                            </span>
+                                            <span class="devider">/</span>
+                                            <span class="entry-date">@item.Time</span>
+                                            <span class="devider">/</span>
+                                            <span class="byline">
+                                                <span class="author vcard">
+                                                    By: <a rel="author" href="#">@item.WriterName</a>
+                                                </span>
+                                            </span>
+                                        </div> <!-- .entry-meta -->
+                                    </header> <!-- /.entry-header -->
+
+                                    <div class="entry-content">
+                                        <span class="screen-reader-text"></span>
+                                        <p>
+                                            @item.Text
+                                            @Html.ActionLink("Continue reading", "Details", new { id = item.PostId }, new { @class = "more-link" })
+                                            @*<a href="#" class="more-link">Continue reading</a>*@
+                                        </p>
+                                    </div> <!-- .entry-content -->
+
+                                    <footer class="entry-footer clearfix">
+                                        <div class="footer-meta clearfix">
+                                            <div class="post-comment">
+                                                <a href="#" class="comments-link">
+                                                    <span>@item.CommentsVM.Comments.Count() Comments</span>
+                                                </a>
+                                            </div>
+                                        </div> <!-- /.footer-meta -->
+                                    </footer> <!-- .entry-footer -->
+                                </article>
+                                <!-- /.post-->
+                            }
+
+
+
+                        </main> <!-- #main -->
+                    </div> <!-- #primary -->
+                </div>
+            </div>
+        </div> <!-- /.col-md-8 -->
+    </div> <!-- /.row -->
+</div> <!-- /.container -->

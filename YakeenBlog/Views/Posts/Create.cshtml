@@ -1,0 +1,41 @@
+﻿@model PostCreateVM
+
+<div class="comment-respond" id="respond">
+    <h3 class="comment-reply-title"><span>write your article</span></h3>
+
+    @using (Html.BeginForm("Create", "Posts", new { }, FormMethod.Post  , new{ name = "contactForm" , id = "contact_form" , style = "margin-left : 50px" }))
+    {
+        @Html.AntiForgeryToken();
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    @Html.DropDownListFor(m => m.Post.Category.Id, new SelectList(Model.Categories, "Value", "Text"), new { @class = "form-controller" })
+                    @*<input type='text' name='name' id='name' class="form-controller" aria-required="true" placeholder="Name*">*@
+                </p>
+            </div>
+            <div class="col-md-12">
+                <p>
+                    @Html.TextBoxFor(m => m.Post.Address, new { @class = "form-controller", placeholder = "Header" })
+                    @Html.ValidationMessageFor(m => m.Post.Address, "", new { @class = "text-danger" })
+                    @*<input type='text' name='email' id='email-comments' class="form-controller" aria-required="true" placeholder="Email*">*@
+                </p>
+            </div>
+            <div class="col-md-12">
+                <p>
+                    @Html.TextAreaFor(m => m.Post.Text, new { @class = "form-controller", rows = "8", cols = "45", placeholder = "Write your article" })
+                    @Html.ValidationMessageFor(m => m.Post.Text, "", new { @class = "text-danger" })
+                    @*<textarea name='message' id='message' class="form-controller" aria-required="true" rows="8" cols="45" placeholder="Write a Comment...."></textarea>*@
+                </p>
+            </div>
+            <div class="col-md-12">
+                <p class="form-submit">
+                    <input type="submit" value="Post Comment" id="submit" name="submit">
+                </p>
+            </div>
+        </div>
+    }
+
+
+
+</div><!-- #respond -->      

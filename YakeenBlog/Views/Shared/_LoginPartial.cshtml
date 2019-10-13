@@ -1,0 +1,30 @@
+﻿@using Microsoft.AspNet.Identity
+@using YakeenBlog.Controllers
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", style = "color:black" }))
+    {
+    @Html.AntiForgeryToken()
+
+<ul class="nav navbar-nav">
+    @if (User.IsInRole("admin") || User.IsInRole("Admin"))
+    {
+        <li>@Html.ActionLink("Write an article", "Create", "Posts", new { }, new { style = "color:black" })</li>
+        <li>@Html.ActionLink("Your articles", "UserArticles", "Posts", new { }, new { style = "color:black" })</li>
+    }
+    <li>@Html.ActionLink("Home", "Index", "Posts", new { }, new { style = "color:black" })</li>
+    <li>
+        @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", style = "color:black" })
+    </li>
+    <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+</ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Home", "Index", "Posts" , new { }, new {style = "color:black" })</li>
+        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new {id = "registerLink", style = "color:black"})</li>
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: new{ returnUrl = "/Posts/index"}, htmlAttributes: new {id = "loginLink", style = "color:black"})</li>
+    </ul>
+}

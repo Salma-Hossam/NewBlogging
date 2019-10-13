@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <!-- Basic Page Needs
+       ================================================== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Specific Meta
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="glimmer is a modern presentation HTML5 Blog template.">
+    <meta name="keywords" content="HTML5, Template, Design, Development, Blog" />
+    <meta name="author" content="">
+
+    <!-- Titles
+    ================================================== -->
+    <title>Glimmer | Blog Template</title>
+
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="~/Template/images/favicon.html">
+    <link rel="apple-touch-icon" href="~/Template/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="~/Template/images/apple-touch-icon-72x72.html">
+    <link rel="apple-touch-icon" sizes="114x114" href="~/Template/images/apple-touch-icon-114x114.html">
+
+    <!-- Custom Font
+    ================================================== -->
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic%7CLato:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="~/Template/fonts/font-awsome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Template/fonts/glimmer/glimmer-shape.css">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="~/Template/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Template/lib/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="~/Template/lib/justifiedgallery/justifiedGallery.min.css">
+    <link rel="stylesheet" href="~/Template/css/owl.carousel.css">
+    <link rel="stylesheet" href="~/Template/style.css">
+    <link rel="stylesheet" href="~/Template/colors/color-schemer.css">
+
+    <!-- Modernizr
+    ================================================== -->
+    <script src="~/Template/js/vendor/modernizr-2.8.3.min.js"></script>
+
+</head>
+<body>
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">*@
+
+    
+    
+        <!-- Header
+    ================================================== -->
+        <header id="masthead" class="site-header">
+            <!-- Header Middle Part-->
+            <div id="header-middle">
+                <div class="container">
+                    <div class="row">
+                        <!-- Site Logo -->
+                        <div id="site-logo">
+                            <span style="font-size: 100px ">Yakeen</span>
+                        </div> <!-- /#site-logo -->
+                    </div>
+                    <div class="row">
+                        
+                       
+                        <!-- Navigation Right -->
+                        @*<nav  class="site-navigation top-navigation">
+                            <div class="menu-wrapper">*@
+                                <div class="menu-content">
+                                    @Html.Partial("_LoginPartial")
+                                    @*<ul class="menu-list">
+            <li><a href="category-one.html">Lifestyle</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>*@
+                                </div>
+                            @*</div> <!-- /.menu-wrapper -->
+                        </nav> <!-- /#nav-right -->*@
+                    </div> <!-- /.row -->
+                </div> <!-- /.container -->
+            </div> <!-- /#header-middle -->
+        </header> <!-- /.site-header -->
+        <!-- Featured Area
+    ================================================== -->
+        @*<div id="featured" class="feature-area" style="background:url(~/Template/images/featured/blog.jpg)">
+            <div id="featured-overlay"></div>
+        </div>*@ 
+<!-- /#featured -->
+        @RenderBody()
+
+        <!-- Footer
+        ================================================== -->
+        <footer id="colophon" class="site-footer">
+
+            <div id="footer-top">
+                <div class="container">
+                    <div class="widget clearfix">
+                        <div class="widget-title-area">
+                            <span class="widget-title-inner"></span>
+                            <h5 class="widget-title"><span>Follow us on Instagram</span></h5> <!-- /.widget-title -->
+                        </div> <!-- /.widget-title-area -->
+                        <div id="instafeed"></div> <!-- /.instafeed-content -->
+                    </div> <!-- /.glimmer_about_widget -->
+                </div>
+            </div> <!-- #footer-top" -->
+
+            <div id="footer-middle">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="widget widget_text clearfix">
+                                <div class="widget-title-area">
+                                    <h5 class="widget-title"><span>About</span></h5> <!-- /.widget-title -->
+                                </div> <!-- /.widget-title-area -->
+
+                                <div class="widget-contact">
+                                    <p>
+                                        <img alt="logo" class="retina" src="~/Template/images/glimmer-logo.png">
+                                    </p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae nibh nisl. Cras et mauris eget lorem ultricies fermentum  diam.</p>
+                                </div>
+                            </div> <!-- /.widget_about_and_contact -->
+                        </div> <!-- /.col-md-4 -->
+
+                        <div class="col-md-4">
+                            <div class="widget widget_subscribe clearfix">
+                                <div class="widget-title-area">
+                                    <h5 class="widget-title"><span>Newsletter</span></h5> <!-- /.widget-title -->
+                                </div>
+                                <div class="newsletter-area">
+                                    <p>Lum eariassi nulliquae con por am et aut minum erepelluptas corepro qui quodi cor em unt.</p>
+                                    <div class="form-newsletter">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <p>
+                                                    <input type='text' name='name' id='firstname' class="form-controller" aria-required="true" placeholder="Your Name" value="">
+                                                </p>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <p>
+                                                    <input type='email' name='email' id='email' class="form-controller" aria-required="true" placeholder="Your Email" value="">
+                                                </p>
+                                            </div>
+                                            <div class="col-md-12 text-center">
+                                                <button type="submit" id="mc-embedded-subscribe" class="mail-chip-button">Subscribe Us</button>
+                                            </div>
+                                        </div>
+                                    </div> <!-- /.form-newsletter -->
+                                </div> <!-- /.newsletter-area -->
+                            </div> <!-- /.widget_about_and_contact -->
+                        </div> <!-- /.col-md-4 -->
+
+                        <div class="col-md-4">
+                            <div class="widget widget_flicker clearfix">
+                                <div class="widget-title-area">
+                                    <h5 class="widget-title"><span>Flicker Images</span></h5> <!-- /.widget-title -->
+                                </div> <!-- /.widget-title-area -->
+                            </div> <!-- /.widget_about_and_contact -->
+                        </div> <!-- /.col-md-4 -->
+                    </div> <!-- /.row -->
+                </div> <!-- /.container -->
+            </div> <!-- #footer-middle -->
+
+            <div id="footer-bottom">
+                <div class="container">
+                    <div class="copyright">
+                        <p>Copyright&copy; 2015 Softhopper. All right reserved.</p>
+                    </div> <!-- /.copyright -->
+                </div> <!-- /.container -->
+            </div> <!-- /#footer-bottom -->
+
+    </footer><!-- #colophon -->
+    
+
+    @*<hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>*@
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+
+        <script src="~/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="~/node_modules/jquery-ajax-unobtrusive/dist/jquery.unobtrusive-ajax.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="~/Template/js/vendor/jquery-migrate.min.js"></script> <!-- libs -->
+    <script src="~/Template/lib/bootstrap/js/bootstrap.min.js"></script> <!-- bootstrap -->
+    <script src="~/Template/js/owl.carousel.min.js"></script> <!-- owl-carousel -->
+    <script src="~/Template/lib/magnific-popup/jquery.magnific-popup.min.js"></script> <!-- libs -->
+    <script src="~/Template/lib/justifiedgallery/jquery.justifiedGallery.min.js"></script> <!-- justified gallery -->
+    @*<script src="~/Template/js/plugins.js"></script> <!-- plugins js -->*@
+    @*<script src="~/Template/js/jquery.appear.html"></script> <!-- Appear js -->*@
+    @*<script src="~/Template/js/glimmer.js"></script> <!-- glimmer script -->*@
+    </body>
+</html>

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Category>
+
+<div class="row">
+    <div class="header-search">
+        <div class="search default">
+            <form method="get" action="#" class="searchform">
+                <div class="input-group">
+                    <input type="search" placeholder="Search..." class="form-control" name="s" id="dsearch">
+                    <span class="input-group-btn">
+                        <button id="submit-btn" type="button" class="btn btn-default"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
+            </form>
+        </div> <!-- /.search -->
+    </div> <!-- /.header-search -->
+</div>
+<div class="row">
+    <nav id="nav-right" class="site-navigation top-navigation menu-right">
+        <div class="menu-wrapper">
+            <div class="menu-content">
+                <ul class="menu-list">
+                    @foreach (var item in Model)
+                    {
+                        <li>@Html.ActionLink(item.Name,"GetByCategory" , "Posts" , new{id = item.Id}, new{})</li>
+                    }
+
+                </ul>
+            </div>
+        </div> <!-- /.menu-wrapper -->
+    </nav> <!-- /#nav-right -->
+</div>

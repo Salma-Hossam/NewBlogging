@@ -1,0 +1,71 @@
+﻿@model PostDetailVM
+
+
+
+<!-- Content
+================================================== -->
+<!-- Content
+        ================================================== -->
+<div id="content" class="site-content">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <!-- Content Area -->
+                <div id="primary" class="content-area">
+                    <main id="main" class="site-main">
+                        <article class="post hentry">
+                            <header class="entry-header">
+                                <h2 class="entry-title">@Model.Header</h2>
+                                <div class="entry-meta">
+                                    @Html.DisplayFor(m => m.Category, new { @class = "cat-links" })
+                                    <span class="devider">/</span>
+                                    @Html.DisplayFor(m => m.Time, new { @class = "entry-date" })
+                                    <span class="devider">/</span>
+                                    <span class="byline">
+                                        By: @Html.DisplayFor(m => m.WriterName, new { @class = "author vcard" })
+                                    </span>
+                                </div> <!-- .entry-meta -->
+                            </header> <!-- /.entry-header -->
+
+                            <div class="entry-content">
+                                @Html.HiddenFor(m => m.PostId)
+                                @Html.DisplayFor(m => m.Text)
+                            </div> <!-- .entry-content -->
+
+                            <footer class="entry-footer clearfix">
+                                <div class="footer-meta clearfix">
+                                    <div class="post-comment">
+                                        <a href="#" class="comments-link">
+                                            <span>@Model.CommentsVM.Comments.Count() comments</span>
+                                        </a>
+                                    </div>
+                                    <div class="share-area">
+                                        <div>
+                                            <a href="#"><span class="fa fa-twitter"></span></a>
+                                            <a href="#"><span class="fa fa-facebook"></span></a>
+                                            <a href="#"><span class="fa fa-google-plus"></span></a>
+                                            <a href="#"><span class="fa fa-instagram"></span></a>
+                                            <a href="#"><span class="fa fa-dribbble"></span></a>
+                                        </div>
+                                    </div> 
+                                    <!-- /.share-area -->
+                                    <div class="post-view">
+                                        <a href="#" class="view-link">
+                                            <span></span>
+                                        </a>
+                                    </div>
+                                </div> <!-- /.footer-meta -->
+                            </footer> <!-- .entry-footer -->
+                        </article> <!-- /.post-->
+                       
+                       
+                        <!-- comment-area -->
+                            @Html.Partial("_comments" , Model.CommentsVM)
+                    </main> <!-- #main -->
+                </div> <!-- #primary -->
+            </div> <!-- /.col-md-8 -->
+        </div> <!-- /.row -->
+    </div> <!-- /.container -->
+
+</div><!-- #content -->

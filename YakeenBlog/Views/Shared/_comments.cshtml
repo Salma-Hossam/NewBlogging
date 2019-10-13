@@ -1,0 +1,74 @@
+﻿@model CommentVM
+
+@{
+    AjaxOptions ajaxOptions = new AjaxOptions()
+    {
+        UpdateTargetId = "comments",
+        HttpMethod = "post",
+        InsertionMode = InsertionMode.Replace,
+
+    };
+
+    Model.Newcomment.Text = "";
+    
+}
+
+<div class="comments-area" id="comments">
+
+    <h2 class="comments-title">
+        <span>@Model.Comments.Count() Comments</span>
+    </h2>
+
+    <ol class="comment-list">
+        @foreach (var item in @Model.Comments)
+        {
+            <li class="comment">
+                <div class="comment-body">
+                    <div class="comment-meta">
+                        <div class="comment-metadata">
+                            @Html.DisplayFor(m => item.User.UserName, new {@class = "author"})
+                            @Html.DisplayFor(m => item.Time, new {@class = "date"})
+                        </div><!-- .comment-metadata -->
+                    </div><!-- .comment-meta -->
+
+                    <div class="comment-details">
+
+                        <div class="comment-content">
+                            @Html.DisplayFor(m => item.Text)
+                        </div><!-- .comment-content -->
+                    </div> <!-- /.comment-details -->
+                </div><!-- .comment-body -->
+            </li><!-- #comment -->
+        }
+
+
+    </ol><!-- .comment-list -->
+    
+    @if (Request.IsAuthenticated)
+    {
+        <div class="comment-respond" id="respond">
+            <h3 class="comment-reply-title"><span>Leave a Reply</span></h3>
+
+
+            @using (Ajax.BeginForm("CreateComment", new {id = Model.PostId}, ajaxOptions, new {name = "contactForm", id = "contact_form"}))
+            {
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>
+                            <textarea  name="text" id = "message" class = "form-controller" rows = "8" cols = "45" placeholder = "Write a Comment...."></textarea>
+                            @*@Html.TextAreaFor(m => m.Newcomment.Text, new {id = "message", @class = "form-controller", rows = "8", cols = "45", placeholder = "Write a Comment...."})*@
+                        </p>
+                    </div>
+                    <div class="col-md-12">
+                        <p class="form-submit">
+                            <input type="submit" value="Post Comment">
+                        </p>
+                    </div>
+                </div>
+            }
+
+
+        </div><!-- #respond -->
+    }
+   
+</div>

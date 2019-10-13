@@ -1,0 +1,51 @@
+﻿@model PostIndexVM
+
+@{
+    AjaxOptions ajaxOptions = new AjaxOptions()
+    {
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "Get",
+        UpdateTargetId = "content"
+    };
+}
+
+<div class="row">
+    <nav id="nav-right" class="site-navigation top-navigation menu-right">
+        <div class="menu-wrapper">
+            <div class="menu-content">
+                <ul class="menu-list">
+                    @foreach (var item in Model.Categories)
+                    {
+                        <li>@Ajax.ActionLink(item.Name, "GetByCategory", "Posts", new { id = item.Id }, ajaxOptions)</li>
+                    }
+
+                </ul>
+            </div>
+        </div> <!-- /.menu-wrapper -->
+    </nav> <!-- /#nav-right -->
+</div>
+
+
+
+<div class="row">
+    <div class="header-search">
+        <div class="search default">
+            @using (@Ajax.BeginForm("GetBySearch", new {}, ajaxOptions, new {@class = "searchform", style = "margin-left : 50px"}))
+            {
+                <input class="form-control" placeholder="Search..." type="text" name="txt_search" id="">
+                <button type="submit" style="color: black" id="submit-btn"  class="btn btn-default">
+                </button>
+            }
+
+        </div>
+    </div>
+</div>
+
+<!-- Content
+================================================== -->
+@*@Html.Partial("_Categories", Model.Categories)*@
+<div id="content" class="site-content">
+
+   @Html.Partial("_PostsIndex", Model.Posts)
+
+</div><!-- #content -->
