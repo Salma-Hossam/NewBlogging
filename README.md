@@ -10,6 +10,10 @@ A website where users can navigate between articles, and write their own article
 in order to get experimental/primary data.
 
 *After running the project
+  when registering, set the role of the user from the role drop down list in the form.
+  if you restored the bak file and needed to login using existing users, then all their passwords are P@ssw0rd
+
+*Privillages
 1- Unauthenticated user:
 *In home, can find all articles
 *can navigate between articles, and choose an article to read it and read the comment
